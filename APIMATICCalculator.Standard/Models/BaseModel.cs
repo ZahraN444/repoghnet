@@ -1,11 +1,11 @@
 // <copyright file="BaseModel.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using APIMATICCalculator.Standard.Utilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using APIMATICCalculator.Standard.Utilities;
-using Newtonsoft.Json;
 
 namespace APIMATICCalculator.Standard.Models
 {
