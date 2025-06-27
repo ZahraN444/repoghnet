@@ -5,17 +5,19 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(60)` |
+| Environment | `Environment` | The API environment. <br> **Default: `Environment.Production`** |
+| Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
 | HttpClientConfiguration | [`Action<HttpClientConfiguration.Builder>`](../doc/http-client-configuration-builder.md) | Action delegate that configures the HTTP client by using the HttpClientConfiguration.Builder for customizing API call settings.<br>*Default*: `new HttpClient()` |
 
 The API client can be initialized as follows:
 
 ```csharp
-APIMATICCalculatorZipClient client = new APIMATICCalculatorZipClient.Builder()
+APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
+    .Environment(APIMATICCalculator.Standard.Environment.Production)
     .Build();
 ```
 
-## APIMATIC Calculator - zipClient Class
+## APIMATIC CalculatorClient Class
 
 The gateway for the SDK. This class acts as a factory for the Controllers and also holds the configuration of the SDK.
 
@@ -37,12 +39,12 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| `GetBaseUri(Server alias = Server.Default)` | Gets the URL for a particular alias in the current environment and appends it with template parameters. | `string` |
-| `ToBuilder()` | Creates an object of the APIMATIC Calculator - zipClient using the values provided for the builder. | `Builder` |
+| `GetBaseUri(Server alias = Server.Calculator)` | Gets the URL for a particular alias in the current environment and appends it with template parameters. | `string` |
+| `ToBuilder()` | Creates an object of the APIMATIC CalculatorClient using the values provided for the builder. | `Builder` |
 
-## APIMATIC Calculator - zipClient Builder Class
+## APIMATIC CalculatorClient Builder Class
 
-Class to build instances of APIMATIC Calculator - zipClient.
+Class to build instances of APIMATIC CalculatorClient.
 
 ### Methods
 

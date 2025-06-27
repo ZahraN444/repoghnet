@@ -18,7 +18,7 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ## Usage Example
 
 ```csharp
-var client = new APIMATICCalculatorZipClient.Builder()
+var client = new APIMATICCalculatorClient.Builder()
     .HttpClientConfig(config => config
         .Proxy(
             new ProxyConfigurationBuilder("http://localhost")
